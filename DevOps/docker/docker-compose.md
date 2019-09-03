@@ -1,0 +1,8 @@
+- docker compose up starts up all the containers.
+- docker compose ps checks the status of the containers managed by docker compose
+- docker compose logs outoputs colored and aggregatgted logs for the compse-managed containers.
+- docker compose logs with dash **f** options outputs appended log when the log grows.
+- docker compose logs with the container name in the end outputs the logs of a specific container.
+- docker compose stop - stops all the running container withoiut removing them.
+- docker compose rm - removes all the container.
+- docker compose build - rebuilds all the images.

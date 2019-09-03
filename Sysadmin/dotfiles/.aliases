@@ -1,0 +1,37 @@
+# Directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+
+# Logs
+alias tf="tail -f"
+
+# Chef
+alias lc="librarian-chef"
+
+# Vagrant
+alias vu="vagrant up"
+alias vp="vagrant provision"
+alias vr="vagrant reload"
+alias vh="vagrant halt"
+alias vd="vagrant destroy"
+alias vs="vagrant ssh"
+
+# Docker
+alias dc="docker-compose"
+alias dcb="docker-compose build"
+alias dcu="docker-compose up"
+alias dcrs="docker-compose restart"
+alias dcr="docker-compose run"
+alias dce="docker-compose exec"
+alias dcs="docker-compose stop"
+
+# Neovim
+# Use \vim to access original vim
+alias vim="nvim"
+alias vi="nvim"
+
+# Git
+alias gbs="git branch --sort=committerdate"
+alias gbsr="git branch --sort=committerdate --remote"

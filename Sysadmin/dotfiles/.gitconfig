@@ -1,0 +1,9 @@
+[user]
+  name = Meir Finkelstine
+  email = mfinkelstine@gmail.com
+[github]
+  user = axsuul
+[core]
+  excludesfile = ~/.gitignore_global
+[push]
+  default = current

@@ -1,0 +1,18 @@
+# Load things
+for f in "$HOME"/.initializers/*; do source $f; done
+
+# Export a key/value .env file by adding an export in front
+# of each line and then sourcing the entire file
+if [[ -f "$HOME/.env" ]]; then
+  . <(sed '/^export/!s/^/export /' "$HOME/.env")
+fi
+
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -f "$HOME/.functions" ]] && source "$HOME/.functions"
+
+# Include local bin into PATH
+[[ -d "$HOME/bin" ]] && export PATH=$HOME/bin:$PATH
+
+# Use neovim as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
