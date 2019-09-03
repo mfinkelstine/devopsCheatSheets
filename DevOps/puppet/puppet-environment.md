@@ -24,46 +24,47 @@
     – “%{environment}”
     – “common”
     ```
-Here environment is the facter that we will set on puppet agent box.
+    Here environment is the facter that we will set on puppet agent box.
 also make sure you have :datadir set as
     ```
     :yaml:
     :datadir: /etc/puppet/hieradata
     ```
+
 8. Now under hieradata folder create yaml files for respective environments and declare data inside it.
-####On Puppet Agent
+# On Puppet Agent
 There are three ways we can make use of environments on puppet agent nodes.
-#####First way:
+## First way:
 Once you have decided that which particular node will be production , staging or development.
 run below command on respective agent
-######For production
-puppet config set environment production –section agent
-######For Staging
-puppet config set environment staging –section agent
-######For Development
-puppet config set environment development –section agent
+* For production
+```puppet config set environment production –section agent```
+* For Staging
+```puppet config set environment staging –section agent```
+* For Development
+```puppet config set environment development –section agent```
 After this run “puppet agent –test”
 This will fetch the corresponding module meant for respective environment.
 
-#####Second Way
+## Second Way
 Once you have decided that which particular node will be production , staging or development.
 Add below entries to .bash_profile file of the agent node
-######For production
-export FACTER_environment=production
-######For Staging
-export FACTER_environment=staging
-######For Development
-export FACTER_environment=development
+* For production
+```export FACTER_environment=production```
+* For Staging
+```export FACTER_environment=staging```
+* For Development
+```export FACTER_environment=development```
 
 After this run “puppet agent –test”
 This will fetch the corresponding module meant for respective environment.
 
-#####Third Way
+## Third Way
 Once you have decided that which particular node will be production , staging or development.
 use below command to get the changes from puppet master
-######For production
-puppet agent –verbose –debug –onetime –no-daemonize –environment production
-######For Staging
-puppet agent –verbose –debug –onetime –no-daemonize –environment staging
-######For Development
-puppet agent –verbose –debug –onetime –no-daemonize –environment development
+* For production
+```puppet agent –verbose –debug –onetime –no-daemonize –environment production```
+* For Staging
+```puppet agent –verbose –debug –onetime –no-daemonize –environment staging```
+* For Development
+```puppet agent –verbose –debug –onetime –no-daemonize –environment development```
